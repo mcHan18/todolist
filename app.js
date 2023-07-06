@@ -41,8 +41,10 @@ const defaultItems = [item1, item2, item3];
 
 const listSchema = {
     name: String,
-    items: [itemSchema],
-    required: true
+    items: {
+        Array: [itemSchema],
+        required: true
+    }
 };
 
 const List = mongoose.model("List", listSchema);

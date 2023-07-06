@@ -20,7 +20,10 @@ app.use(express.static("public"));
 mongoose.connect("mongodb+srv://wmc961027:Wmc546362466@cluster0.4t62vp9.mongodb.net/todolistDB", {useNewUrlParser: true});
 
 const itemSchema = {
-    name: String
+    name: {
+        type: String,
+        required: true
+    }
 };
 
 const Item = mongoose.model("Item", itemSchema);
